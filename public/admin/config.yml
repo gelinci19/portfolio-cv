@@ -2,28 +2,44 @@ backend:
   name: github
   repo: gelinci19/portfolio-cv
   branch: main
-  base_url: https://portfolio-cv-4lu.pages.dev
-  auth_endpoint: api/auth
 
-media_folder: "public/assets"
-public_folder: "/assets"
+media_folder: "public/images"
+public_folder: "/images"
 
 collections:
-  - name: "cv_data"
-    label: "Update CV & Portfolio"
+  # 1. SITE SETTINGS: Control Global Branding, Colors, and Links
+  - name: "settings"
+    label: "Site Settings"
     files:
-      - file: "src/data/resume.json"
-        label: "Resume & Profile Details"
-        name: "resume"
+      - file: "src/content/settings/general.json"
+        label: "Global Config"
+        name: "general"
         fields:
-          - {label: "Full Name", name: "name", widget: "string", default: "Kadir Gelincik"}
-          - {label: "Postgraduate Program", name: "msc_program", widget: "string", default: "MSc Engineering Management, Cardiff University"}
-          - {label: "Undergraduate Program", name: "bsc_program", widget: "string", default: "BSc Mechanical Engineering, Cukurova University"}
-          - {label: "Key CAD Certifications", name: "certifications", widget: "list", default: ["SOLIDWORKS CAD Design Associate", "SOLIDWORKS Sheet Metal Professional", "SOLIDWORKS Weldments Professional"]}
-      - file: "src/data/projects.json"
-        label: "3D CAD Projects"
-        name: "projects"
+          - {label: "Site Title", name: "title", widget: "string"}
+          - {label: "Primary Color", name: "primaryColor", widget: "color"}
+          - {label: "Site Logo", name: "logo", widget: "image"}
+          - {label: "Social Links", name: "social", widget: "list", fields: [{label: "Platform", name: "platform", widget: "string"}, {label: "URL", name: "url", widget: "string"}]}
+
+  # 2. HOMEPAGE: Full layout control
+  - name: "home"
+    label: "Homepage"
+    files:
+      - file: "src/content/home/index.md"
+        label: "Home Page Content"
+        name: "home"
         fields:
-          - {label: "Project Title", name: "title", widget: "string"}
-          - {label: "Description", name: "description", widget: "text"}
-          - {label: "3D Model (.glb file)", name: "model", widget: "file"}
+          - {label: "Hero Heading", name: "heading", widget: "string"}
+          - {label: "Hero Subtext", name: "subtext", widget: "text"}
+          - {label: "Hero Image", name: "heroImage", widget: "image"}
+          - {label: "Enable Theme Toggle", name: "showToggle", widget: "boolean", default: true}
+
+  # 3. PROJECTS: Unlimited creation/editing capacity
+  - name: "projects"
+    label: "Projects"
+    folder: "src/content/projects"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Project Image", name: "image", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Date", name: "date", widget: "datetime"}
