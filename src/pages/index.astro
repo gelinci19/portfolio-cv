@@ -8,8 +8,6 @@ import Contact from "../components/contact.astro";
 import Footer from "../components/footer.astro";
 import Career from "../components/career.astro";
 import localData from '../data/home.json';
-import { getEntry } from 'astro:content';
-const home = await getEntry('home', 'index');
 
 interface Social {
   name: string;
@@ -29,9 +27,12 @@ interface ProfileData {
   ogImageUrl?: string;
   lang?: string;
   socials: Social[];
+  heading?: string;
+  subtext?: string;
+  heroImage?: string;
 }
 
-const isApiLive = import.meta.env.PROD; // Auto true in production
+const isApiLive = import.meta.env.PROD;
 const BASE_URL = import.meta.env.PUBLIC_API_BASE_URL;
 
 let data: ProfileData;
@@ -60,11 +61,16 @@ const {
   ogImageUrl,
   lang,
   socials,
+  heading,
+  subtext,
+  heroImage,
 } = data;
 ---
-<h1>{home.data.heading}</h1>
-<p>{home.data.subtext}</p>
-<img src={home.data.heroImage} />
+
+<!-- Render editable content directly from your JSON/CMS data -->
+{heading && <h1>{heading}</h1>}
+{subtext && <p>{subtext}</p>}
+{heroImage && <img src={heroImage} alt="Hero" />}
 
 <Layout
   title={webpageTitle}
