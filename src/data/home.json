@@ -1,30 +1,7 @@
 {
-  "name": "John Doe",
-  "photoUrl": "favicon.svg",
-  "location": "City, Country",
-  "availability": "Available for hire",
-  "description": "A brief, compelling introduction about who you are and what you do. Mention your core philosophy, your passion for building digital products, and your drive for creating efficient, high-impact solutions.",
-  "descriptionHtml": "A brief, compelling introduction about who you are and what you do. Mention your core <span class='text-accent font-bold'>philosophy</span>, your passion for building digital products, and your drive for creating <span class='text-accent font-bold'>efficient</span>, <span class='text-accent font-bold'>high-impact</span> solutions.",
-  "webpageTitle": "John Doe | Lead Software Engineer",
-  "resumeUrl": "https://example-files.online-convert.com/document/pdf/example.pdf",
-
-  "_seo_comment": "SEO fields — update these along with your personal info for best search engine visibility.",
-  "jobTitle": "Lead Software Engineer",
-  "keywords": "John Doe, software engineer, Flutter, FastAPI, mobile development, portfolio",
-  "siteUrl": "https://your-domain.com",
-  "lang": "en",
-  "twitterHandle": "",
-  "ogImageUrl": "/placeholder.jpeg",
-
   "_comment": "Add your social links below. Leave the 'url' empty to hide the icon. Set 'showInContact' to true or false to control if it appears in the Contact section.",
+  "resumeUrl": "https://example-files.online-convert.com/document/pdf/example.pdf",
   "socials": [
-    {
-      "name": "GitHub",
-      "url": "https://github.com/[YOUR_USER_NAME]",
-      "icon": "mdi:github",
-      "label": "View Profile",
-      "showInContact": true
-    },
     {
       "name": "LinkedIn",
       "url": "https://linkedin.com/in/[YOUR_USER_NAME]",
@@ -88,5 +65,19 @@
       "label": "View Profile",
       "showInContact": false
     }
-  ]
+  ],
+  "descriptionHtml": "A brief, compelling introduction about who you are and what you do. Mention your core <span class='text-accent font-bold'>philosophy</span>, your passion for building digital products, and your drive for creating <span class='text-accent font-bold'>efficient</span>, <span class='text-accent font-bold'>high-impact</span> solutions.",
+  "siteUrl": "https://your-domain.com",
+  "keywords": "John Doe, software engineer, Flutter, FastAPI, mobile development, portfolio",
+  "name": "Kadir Gelincik",
+  "ogImageUrl": "/placeholder.jpeg",
+  "lang": "en",
+  "webpageTitle": "Kadir Gelincik | Mechanical Engineer & Engineering Management ",
+  "location": "United Kingdom ",
+  "jobTitle": "Mechanical Design Engineer",
+  "availability": "Available",
+  "twitterHandle": "",
+  "description": "A brief, compelling introduction about who you are and what you do. Mention your core philosophy, your passion for building digital products, and your drive for creating efficient, high-impact solutions.",
+  "photoUrl": "favicon.svg",
+  "_seo_comment": "SEO fields — update these along with your personal info for best search engine visibility."
 }
