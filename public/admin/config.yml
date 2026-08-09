@@ -20,19 +20,45 @@ collections:
           - {label: "Location", name: "location", widget: "string"}
           - {label: "Availability Status", name: "availability", widget: "string"}
           - {label: "Profile Photo", name: "photoUrl", widget: "image"}
-          - {label: "Description (Plain Text)", name: "description", widget: "text"}
-          - {label: "Description (HTML)", name: "descriptionHtml", widget: "text"}
-          - {label: "Resume URL / File", name: "resumeUrl", widget: "string"}
-          - {label: "SEO Keywords", name: "keywords", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Description HTML", name: "descriptionHtml", widget: "text"}
+          - {label: "Resume URL", name: "resumeUrl", widget: "string"}
+          - {label: "Keywords", name: "keywords", widget: "string"}
           - label: "Social Media Links"
             name: "socials"
             widget: "list"
             fields:
               - {label: "Platform Name", name: "name", widget: "string"}
               - {label: "Profile URL", name: "url", widget: "string"}
-              - {label: "Icon Identifier", name: "icon", widget: "string"}
-              - {label: "Button Label", name: "label", widget: "string"}
-              - {label: "Show in Contact Section", name: "showInContact", widget: "boolean"}
+              - {label: "Icon", name: "icon", widget: "string"}
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "Show in Contact", name: "showInContact", widget: "boolean"}
+
+  # Career Section Management
+  - name: "career"
+    label: "Career History"
+    folder: "src/content/career"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Job Title / Role", name: "title", widget: "string"}
+      - {label: "Company / Organization", name: "company", widget: "string"}
+      - {label: "Location", name: "location", widget: "string"}
+      - {label: "Start Date", name: "startDate", widget: "string"}
+      - {label: "End Date", name: "endDate", widget: "string"}
+      - {label: "Description", name: "description", widget: "markdown"}
+
+  # Projects Section Management
+  - name: "projects"
+    label: "3D CAD & Projects"
+    folder: "src/content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Project Title", name: "title", widget: "string"}
+      - {label: "Project Image", name: "image", widget: "image"}
+      - {label: "Description", name: "description", widget: "markdown"}
+      - {label: "Date", name: "date", widget: "datetime"}
 
 
   # 2. HOMEPAGE: Full layout control
