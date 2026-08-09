@@ -11,18 +11,18 @@ collections:
     label: "Website Data Files (src/data)"
     files:
       - file: "src/data/home.json"
-        label: "Home & Full Profile Data"
+        label: "Home & Profile Data"
         name: "home_data"
         fields:
           - {label: "Full Name", name: "name", widget: "string"}
-          - {label: "Photo URL / Icon", name: "photoUrl", widget: "string"}
+          - {label: "Webpage Title", name: "webpageTitle", widget: "string"}
+          - {label: "Job Title", name: "jobTitle", widget: "string"}
           - {label: "Location", name: "location", widget: "string"}
           - {label: "Availability Status", name: "availability", widget: "string"}
+          - {label: "Profile Photo URL", name: "photoUrl", widget: "string"}
           - {label: "Description (Plain Text)", name: "description", widget: "text"}
           - {label: "Description (HTML)", name: "descriptionHtml", widget: "text"}
-          - {label: "Webpage Title", name: "webpageTitle", widget: "string"}
-          - {label: "Resume URL / Link", name: "resumeUrl", widget: "string"}
-          - {label: "Job Title", name: "jobTitle", widget: "string"}
+          - {label: "Resume URL", name: "resumeUrl", widget: "string"}
           - {label: "SEO Keywords", name: "keywords", widget: "string"}
           - {label: "Site URL", name: "siteUrl", widget: "string"}
           - {label: "Language", name: "lang", widget: "string"}
@@ -40,10 +40,10 @@ collections:
               - {label: "Show in Contact Section", name: "showInContact", widget: "boolean"}
 
       - file: "src/data/career.json"
-        label: "Career History Data"
+        label: "Career History"
         name: "career_data"
         fields:
-          - label: "Career Positions List"
+          - label: "Career Positions"
             name: "career"
             widget: "list"
             summary: "{{fields.title}} at {{fields.company}}"
@@ -63,7 +63,7 @@ collections:
                 field: {label: "Tag", name: "tag", widget: "string"}
 
       - file: "src/data/projects.json"
-        label: "Projects Data"
+        label: "Projects"
         name: "projects_data"
         fields:
           - label: "Projects List"
@@ -80,7 +80,7 @@ collections:
         label: "Resume Data"
         name: "resume_data"
         fields:
-          - label: "Resume Sections / Items"
+          - label: "Resume Sections"
             name: "items"
             widget: "list"
             summary: "{{fields.title}}"
@@ -90,7 +90,7 @@ collections:
               - {label: "Description", name: "description", widget: "text", required: false}
 
       - file: "src/data/tech.json"
-        label: "Tech Stack Data"
+        label: "Tech Stack"
         name: "tech_data"
         fields:
           - label: "Tech Categories"
