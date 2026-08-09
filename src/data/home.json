@@ -10,20 +10,6 @@
       "showInContact": true
     },
     {
-      "name": "Leetcode",
-      "url": "#",
-      "icon": "devicon-plain:leetcode",
-      "label": "View Profile",
-      "showInContact": false
-    },
-    {
-      "name": "Behance",
-      "url": "#",
-      "icon": "devicon-plain:behance",
-      "label": "View Profile",
-      "showInContact": false
-    },
-    {
       "name": "Email",
       "url": "mailto:your-mail@example.com",
       "icon": "mdi:email",
