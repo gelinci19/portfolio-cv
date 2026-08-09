@@ -7,8 +7,8 @@ media_folder: "public/images"
 public_folder: "/images"
 
 collections:
-  - name: "settings"
-    label: "Website Content"
+  - name: "site_data"
+    label: "Website Data Files"
     files:
       - file: "src/data/home.json"
         label: "Home & Profile Data"
@@ -34,26 +34,30 @@ collections:
               - {label: "Label", name: "label", widget: "string"}
               - {label: "Show in Contact", name: "showInContact", widget: "boolean"}
 
-  - name: "career_history"
-    label: "Career History"
-    folder: "src/content/career"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Job Title / Role", name: "title", widget: "string"}
-      - {label: "Company / Organization", name: "company", widget: "string"}
-      - {label: "Location", name: "location", widget: "string"}
-      - {label: "Start Date", name: "startDate", widget: "string"}
-      - {label: "End Date", name: "endDate", widget: "string"}
-      - {label: "Description", name: "description", widget: "markdown"}
+      - file: "src/data/career.json"
+        label: "Career History"
+        name: "career_data"
+        fields:
+          - label: "Career Positions"
+            name: "career"
+            widget: "list"
+            fields:
+              - {label: "Job Title / Role", name: "title", widget: "string"}
+              - {label: "Company / Organization", name: "company", widget: "string"}
+              - {label: "Location", name: "location", widget: "string"}
+              - {label: "Start Date", name: "startDate", widget: "string"}
+              - {label: "End Date", name: "endDate", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
 
-  - name: "cad_projects"
-    label: "3D CAD & Projects"
-    folder: "src/content/projects"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Project Title", name: "title", widget: "string"}
-      - {label: "Project Image", name: "image", widget: "image"}
-      - {label: "Description", name: "description", widget: "markdown"}
-      - {label: "Date", name: "date", widget: "datetime"}
+      - file: "src/data/projects.json"
+        label: "Projects"
+        name: "projects_data"
+        fields:
+          - label: "Project Items"
+            name: "projects"
+            widget: "list"
+            fields:
+              - {label: "Project Title", name: "title", widget: "string"}
+              - {label: "Project Image", name: "image", widget: "image"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Date / Year", name: "date", widget: "string"}
