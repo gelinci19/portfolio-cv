@@ -1,0 +1,28 @@
+backend:
+  name: github
+  repo: your-github-username/your-repo-name # We will update this after you push to GitHub
+  branch: main
+  base_url: https://your-cloudflare-domain.workers.dev # We will update this later
+
+media_folder: "public/assets"
+public_folder: "/assets"
+
+collections:
+  - name: "cv_data"
+    label: "Update CV & Portfolio"
+    files:
+      - file: "src/data/resume.json"
+        label: "Resume & Profile Details"
+        name: "resume"
+        fields:
+          - {label: "Full Name", name: "name", widget: "string", default: "Kadir Gelincik"}
+          - {label: "Postgraduate Program", name: "msc_program", widget: "string", default: "MSc Engineering Management, Cardiff University"}
+          - {label: "Undergraduate Program", name: "bsc_program", widget: "string", default: "BSc Mechanical Engineering, Cukurova University"}
+          - {label: "Key CAD Certifications", name: "certifications", widget: "list", default: ["SOLIDWORKS CAD Design Associate", "SOLIDWORKS Sheet Metal Professional", "SOLIDWORKS Weldments Professional"]}
+      - file: "src/data/projects.json"
+        label: "3D CAD Projects"
+        name: "projects"
+        fields:
+          - {label: "Project Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "3D Model (.glb file)", name: "model", widget: "file"}
