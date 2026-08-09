@@ -24,8 +24,8 @@ collections:
           - {label: "Resume URL", name: "resumeUrl", widget: "string"}
 
       - file: "src/data/career.json"
-        label: "Career History"
-        name: "career"
+        label: "Career History (Manage & Erase)"
+        name: "career_list"
         fields:
           - label: "Career Positions"
             name: "career"
@@ -41,14 +41,14 @@ collections:
               - {label: "Job Type", name: "type", widget: "string"}
               - {label: "Category", name: "category", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
-              - label: "Tags / Skills"
+              - label: "Skills / Tags"
                 name: "tags"
                 widget: "list"
                 field: {label: "Tag", name: "tag", widget: "string"}
 
       - file: "src/data/projects.json"
-        label: "Projects"
-        name: "projects"
+        label: "Projects (Manage & Erase)"
+        name: "projects_list"
         fields:
           - label: "Project Items"
             name: "projects"
