@@ -1,9 +1,9 @@
 [
   {
-    "title": "Awesome Website",
+    "title": "nasil olacak",
     "description": "A high-performance, SEO-optimized web application built with modern frameworks to showcase technical expertise.",
     "images": ["astro-01.webp", "astro-02.jpeg"],
-    "tech": ["Astro", "Tailwind"],
+    "tech": ["yersen", "Tailwind"],
     "platforms": ["web"],
     "link": "https://astro.build/themes/details/career-portfolio-data-driven-astro-ssg/",
     "category": "Published Website"
