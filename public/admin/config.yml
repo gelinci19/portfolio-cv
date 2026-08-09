@@ -1,8 +1,9 @@
 backend:
   name: github
-  repo: your-github-username/your-repo-name # We will update this after you push to GitHub
+  repo: gelinci19/portfolio-cv
   branch: main
-  base_url: https://your-cloudflare-domain.workers.dev # We will update this later
+  base_url: https://portfolio-cv-4lu.pages.dev
+  auth_endpoint: api/auth
 
 media_folder: "public/assets"
 public_folder: "/assets"
