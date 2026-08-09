@@ -42,12 +42,19 @@ collections:
             name: "career"
             widget: "list"
             fields:
-              - {label: "Job Title / Role", name: "title", widget: "string"}
-              - {label: "Company / Organization", name: "company", widget: "string"}
-              - {label: "Location", name: "location", widget: "string"}
+              - {label: "Job Title", name: "title", widget: "string"}
+              - {label: "Company", name: "company", widget: "string"}
+              - {label: "Company URL", name: "url", widget: "string", required: false}
+              - {label: "Location", name: "location", widget: "string", required: false}
               - {label: "Start Date", name: "startDate", widget: "string"}
               - {label: "End Date", name: "endDate", widget: "string"}
+              - {label: "Job Type (e.g., Full Time Job)", name: "type", widget: "string"}
+              - {label: "Category (work / education)", name: "category", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
+              - label: "Skills / Tags"
+                name: "tags"
+                widget: "list"
+                field: {label: "Tag", name: "tag", widget: "string"}
 
       - file: "src/data/projects.json"
         label: "Projects"
