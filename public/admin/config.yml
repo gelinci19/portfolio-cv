@@ -7,51 +7,101 @@ media_folder: "public/images"
 public_folder: "/images"
 
 collections:
-  - name: "settings"
-    label: "Profile Settings"
+  - name: "data_files"
+    label: "Website Data Files (src/data)"
     files:
       - file: "src/data/home.json"
-        label: "Home & Profile Data"
-        name: "home"
+        label: "Home & Full Profile Data"
+        name: "home_data"
         fields:
           - {label: "Full Name", name: "name", widget: "string"}
-          - {label: "Webpage Title", name: "webpageTitle", widget: "string"}
-          - {label: "Job Title", name: "jobTitle", widget: "string"}
+          - {label: "Photo URL / Icon", name: "photoUrl", widget: "string"}
           - {label: "Location", name: "location", widget: "string"}
           - {label: "Availability Status", name: "availability", widget: "string"}
-          - {label: "Profile Photo", name: "photoUrl", widget: "image"}
-          - {label: "Description", name: "description", widget: "text"}
-          - {label: "Resume URL", name: "resumeUrl", widget: "string"}
+          - {label: "Description (Plain Text)", name: "description", widget: "text"}
+          - {label: "Description (HTML)", name: "descriptionHtml", widget: "text"}
+          - {label: "Webpage Title", name: "webpageTitle", widget: "string"}
+          - {label: "Resume URL / Link", name: "resumeUrl", widget: "string"}
+          - {label: "Job Title", name: "jobTitle", widget: "string"}
+          - {label: "SEO Keywords", name: "keywords", widget: "string"}
+          - {label: "Site URL", name: "siteUrl", widget: "string"}
+          - {label: "Language", name: "lang", widget: "string"}
+          - {label: "Twitter Handle", name: "twitterHandle", widget: "string", required: false}
+          - {label: "OpenGraph Image URL", name: "ogImageUrl", widget: "string"}
+          - label: "Social Links"
+            name: "socials"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - {label: "Platform Name", name: "name", widget: "string"}
+              - {label: "Profile URL", name: "url", widget: "string"}
+              - {label: "Icon Identifier", name: "icon", widget: "string"}
+              - {label: "Button Label", name: "label", widget: "string"}
+              - {label: "Show in Contact Section", name: "showInContact", widget: "boolean"}
 
-  - name: "career"
-    label: "Career History"
-    folder: "src/content/career"
-    create: true
-    slug: "{{slug}}"
-    summary: "{{title}} at {{company}}"
-    fields:
-      - {label: "Job Title", name: "title", widget: "string"}
-      - {label: "Company", name: "company", widget: "string"}
-      - {label: "Company URL", name: "url", widget: "string", required: false}
-      - {label: "Location", name: "location", widget: "string", required: false}
-      - {label: "Start Date", name: "startDate", widget: "string"}
-      - {label: "End Date", name: "endDate", widget: "string"}
-      - {label: "Job Type", name: "type", widget: "string"}
-      - {label: "Category", name: "category", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
-      - label: "Skills / Tags"
-        name: "tags"
-        widget: "list"
-        field: {label: "Tag", name: "tag", widget: "string"}
+      - file: "src/data/career.json"
+        label: "Career History Data"
+        name: "career_data"
+        fields:
+          - label: "Career Positions List"
+            name: "career"
+            widget: "list"
+            summary: "{{fields.title}} at {{fields.company}}"
+            fields:
+              - {label: "Job Title", name: "title", widget: "string"}
+              - {label: "Company", name: "company", widget: "string"}
+              - {label: "Company URL", name: "url", widget: "string", required: false}
+              - {label: "Location", name: "location", widget: "string", required: false}
+              - {label: "Start Date", name: "startDate", widget: "string"}
+              - {label: "End Date", name: "endDate", widget: "string"}
+              - {label: "Job Type", name: "type", widget: "string"}
+              - {label: "Category", name: "category", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - label: "Tags / Skills"
+                name: "tags"
+                widget: "list"
+                field: {label: "Tag", name: "tag", widget: "string"}
 
-  - name: "projects"
-    label: "Projects"
-    folder: "src/content/projects"
-    create: true
-    slug: "{{slug}}"
-    summary: "{{title}}"
-    fields:
-      - {label: "Project Title", name: "title", widget: "string"}
-      - {label: "Project Image", name: "image", widget: "image"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Date", name: "date", widget: "string"}
+      - file: "src/data/projects.json"
+        label: "Projects Data"
+        name: "projects_data"
+        fields:
+          - label: "Projects List"
+            name: "projects"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - {label: "Project Title", name: "title", widget: "string"}
+              - {label: "Project Image URL", name: "image", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Date / Year", name: "date", widget: "string"}
+
+      - file: "src/data/resume.json"
+        label: "Resume Data"
+        name: "resume_data"
+        fields:
+          - label: "Resume Sections / Items"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - {label: "Title", name: "title", widget: "string", required: false}
+              - {label: "Subtitle / Role", name: "subtitle", widget: "string", required: false}
+              - {label: "Description", name: "description", widget: "text", required: false}
+
+      - file: "src/data/tech.json"
+        label: "Tech Stack Data"
+        name: "tech_data"
+        fields:
+          - label: "Tech Categories"
+            name: "tech"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - {label: "Category Title", name: "title", widget: "string"}
+              - label: "Technologies"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Name", name: "name", widget: "string"}
+                  - {label: "Icon", name: "icon", widget: "string", required: false}
