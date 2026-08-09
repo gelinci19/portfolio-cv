@@ -7,6 +7,11 @@ export async function onRequest(context) {
     return new Response("No code provided", { status: 400 });
   }
 
+  // Safety check to verify environment variables are loading on Cloudflare
+  if (!env.GITHUB_CLIENT_ID || !env.GITHUB_CLIENT_SECRET) {
+    return new Response("Error: GITHUB_CLIENT_ID or GITHUB_CLIENT_SECRET environment variables are missing in Cloudflare.", { status: 500 });
+  }
+
   try {
     const response = await fetch("https://github.com/login/oauth/access_token", {
       method: "POST",
@@ -26,7 +31,7 @@ export async function onRequest(context) {
     const token = result.access_token;
 
     if (!token) {
-      return new Response(`Failed to obtain access token: ${JSON.stringify(result)}`, { status: 400 });
+      return new Response(`GitHub Auth Failed. Response: ${JSON.stringify(result)} | Used Client ID: ${env.GITHUB_CLIENT_ID}`, { status: 400 });
     }
 
     const script = `
@@ -41,6 +46,6 @@ export async function onRequest(context) {
       headers: { "content-type": "text/html;charset=UTF-8" },
     });
   } catch (err) {
-    return new Response(`Server error: ${err.message}`, { status: 500 });
+    return new Response(`Server exception: ${err.message}`, { status: 500 });
   }
 }
