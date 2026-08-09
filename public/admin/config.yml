@@ -7,8 +7,8 @@ media_folder: "public/images"
 public_folder: "/images"
 
 collections:
-  - name: "site_content"
-    label: "Website Content"
+  - name: "settings"
+    label: "Profile Settings"
     files:
       - file: "src/data/home.json"
         label: "Home & Profile Data"
@@ -23,39 +23,35 @@ collections:
           - {label: "Description", name: "description", widget: "text"}
           - {label: "Resume URL", name: "resumeUrl", widget: "string"}
 
-      - file: "src/data/career.json"
-        label: "Career History (Manage & Erase)"
-        name: "career_list"
-        fields:
-          - label: "Career Positions"
-            name: "career"
-            widget: "list"
-            summary: "{{fields.title}} at {{fields.company}}"
-            fields:
-              - {label: "Job Title", name: "title", widget: "string"}
-              - {label: "Company", name: "company", widget: "string"}
-              - {label: "Company URL", name: "url", widget: "string", required: false}
-              - {label: "Location", name: "location", widget: "string", required: false}
-              - {label: "Start Date", name: "startDate", widget: "string"}
-              - {label: "End Date", name: "endDate", widget: "string"}
-              - {label: "Job Type", name: "type", widget: "string"}
-              - {label: "Category", name: "category", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-              - label: "Skills / Tags"
-                name: "tags"
-                widget: "list"
-                field: {label: "Tag", name: "tag", widget: "string"}
+  - name: "career"
+    label: "Career History"
+    folder: "src/content/career"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} at {{company}}"
+    fields:
+      - {label: "Job Title", name: "title", widget: "string"}
+      - {label: "Company", name: "company", widget: "string"}
+      - {label: "Company URL", name: "url", widget: "string", required: false}
+      - {label: "Location", name: "location", widget: "string", required: false}
+      - {label: "Start Date", name: "startDate", widget: "string"}
+      - {label: "End Date", name: "endDate", widget: "string"}
+      - {label: "Job Type", name: "type", widget: "string"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - label: "Skills / Tags"
+        name: "tags"
+        widget: "list"
+        field: {label: "Tag", name: "tag", widget: "string"}
 
-      - file: "src/data/projects.json"
-        label: "Projects (Manage & Erase)"
-        name: "projects_list"
-        fields:
-          - label: "Project Items"
-            name: "projects"
-            widget: "list"
-            summary: "{{fields.title}}"
-            fields:
-              - {label: "Project Title", name: "title", widget: "string"}
-              - {label: "Project Image", name: "image", widget: "image"}
-              - {label: "Description", name: "description", widget: "text"}
-              - {label: "Date", name: "date", widget: "string"}
+  - name: "projects"
+    label: "Projects"
+    folder: "src/content/projects"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - {label: "Project Title", name: "title", widget: "string"}
+      - {label: "Project Image", name: "image", widget: "image"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Date", name: "date", widget: "string"}
