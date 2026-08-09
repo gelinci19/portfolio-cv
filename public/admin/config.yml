@@ -7,12 +7,12 @@ media_folder: "public/images"
 public_folder: "/images"
 
 collections:
-  - name: "site_data"
-    label: "Website Data Files"
+  - name: "home_settings"
+    label: "Home & Profile Data"
     files:
       - file: "src/data/home.json"
-        label: "Home & Profile Data"
-        name: "home_data"
+        label: "Profile Configuration"
+        name: "home"
         fields:
           - {label: "Full Name", name: "name", widget: "string"}
           - {label: "Webpage Title", name: "webpageTitle", widget: "string"}
@@ -21,52 +21,37 @@ collections:
           - {label: "Availability Status", name: "availability", widget: "string"}
           - {label: "Profile Photo", name: "photoUrl", widget: "image"}
           - {label: "Description", name: "description", widget: "text"}
-          - {label: "Description HTML", name: "descriptionHtml", widget: "text"}
           - {label: "Resume URL", name: "resumeUrl", widget: "string"}
-          - {label: "Keywords", name: "keywords", widget: "string"}
-          - label: "Social Media Links"
-            name: "socials"
-            widget: "list"
-            fields:
-              - {label: "Platform Name", name: "name", widget: "string"}
-              - {label: "Profile URL", name: "url", widget: "string"}
-              - {label: "Icon", name: "icon", widget: "string"}
-              - {label: "Label", name: "label", widget: "string"}
-              - {label: "Show in Contact", name: "showInContact", widget: "boolean"}
 
-      - file: "src/data/career.json"
-        label: "Career History"
-        name: "career_data"
-        fields:
-          - label: "Career Positions"
-            name: "career"
-            widget: "list"
-            summary: "{{fields.title}} at {{fields.company}}"
-            fields:
-              - {label: "Job Title", name: "title", widget: "string"}
-              - {label: "Company", name: "company", widget: "string"}
-              - {label: "Company URL", name: "url", widget: "string", required: false}
-              - {label: "Location", name: "location", widget: "string", required: false}
-              - {label: "Start Date", name: "startDate", widget: "string"}
-              - {label: "End Date", name: "endDate", widget: "string"}
-              - {label: "Job Type", name: "type", widget: "string"}
-              - {label: "Category", name: "category", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-              - label: "Skills / Tags"
-                name: "tags"
-                widget: "list"
-                field: {label: "Tag", name: "tag", widget: "string"}
+  - name: "career"
+    label: "Career History"
+    folder: "src/content/career"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} at {{company}}"
+    fields:
+      - {label: "Job Title", name: "title", widget: "string"}
+      - {label: "Company", name: "company", widget: "string"}
+      - {label: "Company URL", name: "url", widget: "string", required: false}
+      - {label: "Location", name: "location", widget: "string", required: false}
+      - {label: "Start Date", name: "startDate", widget: "string"}
+      - {label: "End Date", name: "endDate", widget: "string"}
+      - {label: "Job Type", name: "type", widget: "string"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - label: "Skills / Tags"
+        name: "tags"
+        widget: "list"
+        field: {label: "Tag", name: "tag", widget: "string"}
 
-      - file: "src/data/projects.json"
-        label: "Projects"
-        name: "projects_data"
-        fields:
-          - label: "Project Items"
-            name: "projects"
-            widget: "list"
-            summary: "{{fields.title}}"
-            fields:
-              - {label: "Project Title", name: "title", widget: "string"}
-              - {label: "Project Image", name: "image", widget: "image"}
-              - {label: "Description", name: "description", widget: "text"}
-              - {label: "Date / Year", name: "date", widget: "string"}
+  - name: "projects"
+    label: "3D CAD & Projects"
+    folder: "src/content/projects"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - {label: "Project Title", name: "title", widget: "string"}
+      - {label: "Project Image", name: "image", widget: "image"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Date / Year", name: "date", widget: "string"}
