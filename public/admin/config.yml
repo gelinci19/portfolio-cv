@@ -7,18 +7,33 @@ media_folder: "public/images"
 public_folder: "/images"
 
 collections:
-  # 1. SITE SETTINGS: Control Global Branding, Colors, and Links
   - name: "settings"
-    label: "Site Settings"
+    label: "Website Content"
     files:
-      - file: "src/content/settings/general.json"
-        label: "Global Config"
-        name: "general"
+      - file: "src/data/home.json"
+        label: "Home & Profile Data"
+        name: "home"
         fields:
-          - {label: "Site Title", name: "title", widget: "string"}
-          - {label: "Primary Color", name: "primaryColor", widget: "color"}
-          - {label: "Site Logo", name: "logo", widget: "image"}
-          - {label: "Social Links", name: "social", widget: "list", fields: [{label: "Platform", name: "platform", widget: "string"}, {label: "URL", name: "url", widget: "string"}]}
+          - {label: "Full Name", name: "name", widget: "string"}
+          - {label: "Webpage Title", name: "webpageTitle", widget: "string"}
+          - {label: "Job Title", name: "jobTitle", widget: "string"}
+          - {label: "Location", name: "location", widget: "string"}
+          - {label: "Availability Status", name: "availability", widget: "string"}
+          - {label: "Profile Photo", name: "photoUrl", widget: "image"}
+          - {label: "Description (Plain Text)", name: "description", widget: "text"}
+          - {label: "Description (HTML)", name: "descriptionHtml", widget: "text"}
+          - {label: "Resume URL / File", name: "resumeUrl", widget: "string"}
+          - {label: "SEO Keywords", name: "keywords", widget: "string"}
+          - label: "Social Media Links"
+            name: "socials"
+            widget: "list"
+            fields:
+              - {label: "Platform Name", name: "name", widget: "string"}
+              - {label: "Profile URL", name: "url", widget: "string"}
+              - {label: "Icon Identifier", name: "icon", widget: "string"}
+              - {label: "Button Label", name: "label", widget: "string"}
+              - {label: "Show in Contact Section", name: "showInContact", widget: "boolean"}
+
 
   # 2. HOMEPAGE: Full layout control
   - name: "home"
