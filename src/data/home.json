@@ -1,6 +1,6 @@
 {
   "_comment": "Add your social links below. Leave the 'url' empty to hide the icon. Set 'showInContact' to true or false to control if it appears in the Contact section.",
-  "resumeUrl": "https://example-files.online-convert.com/document/pdf/example.pdf",
+  "resumeUrl": "https://www.linkedin.com/jobs/application-settings/?hideTitle=true&li_theme=light",
   "socials": [
     {
       "name": "LinkedIn",
@@ -77,7 +77,7 @@
   "jobTitle": "Mechanical Design Engineer",
   "availability": "Available",
   "twitterHandle": "",
-  "description": "A brief, compelling introduction about who you are and what you do. Mention your core philosophy, your passion for building digital products, and your drive for creating efficient, high-impact solutions.",
+  "description": "Mechanical Engineer specialising in bespoke machinery, multi-axis automation, and mechanical system optimisation. Proven ability \rto deliver comprehensive engineering solutions, Design for Manufacture (DfM), Project Lifecycle Management, encompassing CAD \rdesign, technical calculations, and successful on-site installation and commissioning. Now fully available for full-time employment, \rwith only the final dissertation submission remaining for MSc in Engineering Management. Eligible to work in the UK without \rsponsorship and open to relocation.\r",
   "photoUrl": "/images/kg-logo.png",
   "_seo_comment": "SEO fields — update these along with your personal info for best search engine visibility."
 }
