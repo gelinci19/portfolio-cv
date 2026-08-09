@@ -12,7 +12,7 @@ collections:
     files:
       - file: "src/data/home.json"
         label: "Home & Profile Data"
-        name: "home"
+        name: "home_data"
         fields:
           - {label: "Full Name", name: "name", widget: "string"}
           - {label: "Webpage Title", name: "webpageTitle", widget: "string"}
@@ -34,8 +34,7 @@ collections:
               - {label: "Label", name: "label", widget: "string"}
               - {label: "Show in Contact", name: "showInContact", widget: "boolean"}
 
-  # Career Section Management
-  - name: "career"
+  - name: "career_history"
     label: "Career History"
     folder: "src/content/career"
     create: true
@@ -48,8 +47,7 @@ collections:
       - {label: "End Date", name: "endDate", widget: "string"}
       - {label: "Description", name: "description", widget: "markdown"}
 
-  # Projects Section Management
-  - name: "projects"
+  - name: "cad_projects"
     label: "3D CAD & Projects"
     folder: "src/content/projects"
     create: true
