@@ -41,6 +41,7 @@ collections:
           - label: "Career Positions"
             name: "career"
             widget: "list"
+            summary: "{{fields.title}} at {{fields.company}}"
             fields:
               - {label: "Job Title", name: "title", widget: "string"}
               - {label: "Company", name: "company", widget: "string"}
@@ -48,8 +49,8 @@ collections:
               - {label: "Location", name: "location", widget: "string", required: false}
               - {label: "Start Date", name: "startDate", widget: "string"}
               - {label: "End Date", name: "endDate", widget: "string"}
-              - {label: "Job Type (e.g., Full Time Job)", name: "type", widget: "string"}
-              - {label: "Category (work / education)", name: "category", widget: "string"}
+              - {label: "Job Type", name: "type", widget: "string"}
+              - {label: "Category", name: "category", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
               - label: "Skills / Tags"
                 name: "tags"
@@ -63,6 +64,7 @@ collections:
           - label: "Project Items"
             name: "projects"
             widget: "list"
+            summary: "{{fields.title}}"
             fields:
               - {label: "Project Title", name: "title", widget: "string"}
               - {label: "Project Image", name: "image", widget: "image"}
